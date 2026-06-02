@@ -263,21 +263,7 @@ Differential learning rates allow deeper layers to fine-tune gradually while ena
 
 ---
 
-# Confusion Matrix
 
-|                 | Predicted Original | Predicted Photo |
-| --------------- | ------------------ | --------------- |
-| Actual Original | 1609               | 10              |
-| Actual Photo    | 2                  | 66              |
-
-### Summary
-
-* True Positives: 66
-* True Negatives: 1609
-* False Positives: 10
-* False Negatives: 2
-
-The model demonstrates excellent discrimination capability with very low misclassification rates.
 
 ---
 
