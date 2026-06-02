@@ -401,8 +401,10 @@ Shows:
 * Final decision
 * Review recommendation
   
-<img width="1512" height="949" alt="image" src="https://github.com/user-attachments/assets/39014438-9405-4783-bee9-1f45243a7172" />
-<img width="1512" height="949" alt="image" src="https://github.com/user-attachments/assets/6795d2a1-7a6b-496e-a955-fad92bf81b80" />
+<img width="3024" height="1898" alt="image" src="https://github.com/user-attachments/assets/862e387c-ea7b-4ae6-9301-3972d1f40aab" />
+
+<img width="3024" height="1898" alt="image" src="https://github.com/user-attachments/assets/63c625e9-3517-44da-aa93-503e949ce4f1" />
+
 
 
 
