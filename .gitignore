@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -215,6 +216,8 @@ marimo/_lsp/
 __marimo__/
 
 # Streamlit
+=======
+>>>>>>> 52d3c95 (Initial project upload)
 # Environment variables
 .env
 
@@ -267,4 +270,8 @@ env/
 
 # OS files
 .DS_Store
+<<<<<<< HEAD
 Thumbs.db.streamlit/secrets.toml
+=======
+Thumbs.db
+>>>>>>> 52d3c95 (Initial project upload)

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recaptured Image Detection System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ── Header ─────────────────────────────────────────────── -->
+    <header class="header">
+        <div class="header__inner">
+            <img src="assets/logo.png" alt="Agency Logo" class="header__logo"
+                 onerror="this.style.display='none'">
+            <div class="header__text">
+                <h1 class="header__title">Recaptured Image Detection</h1>
+                <p class="header__subtitle">Image Authenticity Detection</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── Main ───────────────────────────────────────────────── -->
+    <main class="main">
+
+        <!-- Upload card -->
+        <section class="card" id="upload-section">
+            <h2 class="card__title">Submit Photo</h2>
+            <p class="card__desc">
+                Upload a photo to verify whether it is an original image
+                or a recaptured photograph.
+            </p>
+
+            <!-- Drop zone -->
+            <div class="dropzone" id="dropzone">
+                <div class="dropzone__inner">
+                    <svg class="dropzone__icon" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor"
+                         stroke-width="1.5" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                    <p class="dropzone__text">
+                        Drag and drop your image here
+                    </p>
+                    <p class="dropzone__subtext">or</p>
+                    <label class="btn btn--primary" for="file-input">
+                        Browse File
+                    </label>
+                    <input
+                        type="file"
+                        id="file-input"
+                        accept=".jpg,.jpeg,.png"
+                        class="file-input"
+                    >
+                </div>
+            </div>
+
+            <!-- Preview -->
+            <div class="preview" id="preview" hidden>
+                <img id="preview-img" src="" alt="Preview" class="preview__img">
+                <div class="preview__info">
+                    <p class="preview__name" id="preview-name"></p>
+                    <p class="preview__size" id="preview-size"></p>
+                    <button class="btn btn--ghost" id="clear-btn">
+                        Remove
+                    </button>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <button class="btn btn--submit" id="submit-btn" disabled>
+                Verify Image
+            </button>
+        </section>
+
+        <!-- Result card -->
+        <section class="card card--result" id="result-section" hidden>
+            <h2 class="card__title">Verification Result</h2>
+
+            <div class="result" id="result">
+
+                <!-- Decision badge -->
+                <div class="result__badge" id="result-badge"></div>
+
+                <!-- Details -->
+                <div class="result__details">
+                    <div class="result__row">
+                        <span class="result__key">File</span>
+                        <span class="result__val" id="result-filename"></span>
+                    </div>
+                    <div class="result__row">
+                        <span class="result__key">Label</span>
+                        <span class="result__val" id="result-label"></span>
+                    </div>
+                    <div class="result__row">
+                        <span class="result__key">Confidence</span>
+                        <span class="result__val" id="result-prob"></span>
+                    </div>
+                    <div class="result__row">
+                        <span class="result__key">Decision</span>
+                        <span class="result__val" id="result-decision"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Verify another -->
+            <button class="btn btn--ghost" id="reset-btn">
+                Verify Another Image
+            </button>
+        </section>
+
+        <!-- Loader -->
+        <div class="loader" id="loader" hidden>
+            <div class="loader__spinner"></div>
+            <p class="loader__text">Analysing image...</p>
+        </div>
+
+        <!-- Error banner -->
+        <div class="banner banner--error" id="error-banner" hidden>
+            <p id="error-message"></p>
+        </div>
+
+    </main>
+
+    <!-- ── Footer ─────────────────────────────────────────────── -->
+    <footer class="footer">
+      
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
