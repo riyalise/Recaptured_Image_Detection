@@ -421,28 +421,6 @@ Stores:
 
 This provides traceability and supports future auditing.
 
----
-
-# Dataset Labeling Tool
-
-A custom Tkinter desktop application was developed to accelerate dataset creation.
-
-## Keyboard Controls
-
-| Key | Action         |
-| --- | -------------- |
-| 1   | Original       |
-| 2   | Photo of Photo |
-| D   | Doubt          |
-| S   | Other          |
-| Q   | Quit           |
-
-Features:
-
-* Full-screen image viewer
-* One-key annotation workflow
-* Automatic file organization
-* Rapid dataset construction
 
 ---
 
