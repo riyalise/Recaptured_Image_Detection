@@ -147,17 +147,6 @@ The dataset consists of two classes:
 
 # Data Preprocessing
 
-## Training Transformations
-
-```python
-Resize(224,224)
-RandomHorizontalFlip()
-RandomVerticalFlip()
-RandomRotation(15)
-ColorJitter()
-RandomGrayscale()
-Normalize()
-```
 
 ### Purpose
 
@@ -170,11 +159,6 @@ Normalize()
 
 ## Evaluation Transform
 
-```python
-Resize(224,224)
-Normalize()
-```
-
 Used during validation, testing, and deployment.
 
 ---
@@ -186,15 +170,6 @@ Used during validation, testing, and deployment.
 **ResNet-50 (ImageNet Pretrained)**
 
 Transfer learning is used to leverage features learned from millions of natural images.
-
-### Custom Classification Head
-
-```python
-Dropout(0.3)
-Linear(2048 → 1)
-```
-
-The model outputs a single logit which is converted to a probability using the sigmoid function.
 
 ---
 
@@ -301,48 +276,32 @@ The uncertainty zone allows the system to:
 
 # Flask Backend
 
-## Endpoints
-
-### Health Check
-
-```http
-GET /health
-```
-
-Response:
-
-```json
-{
-  "status":"ok",
-  "model":"ResNet-50",
-  "device":"cpu"
-}
-```
-
----
-
-### Prediction Endpoint
-
-```http
-POST /predict
-```
-
-Input:
-
-```multipart/form-data
-file=image.jpg
-```
-
-Output:
-
-```json
-{
-  "filename":"image.jpg",
-  "label":"original",
-  "prob":0.0834,
-  "decision":"ACCEPT"
-}
-```
+Prediction Workflow
+User Uploads Image
+        ↓
+Frontend Sends Request
+        ↓
+Flask API Receives Image
+        ↓
+Image Validation
+        ↓
+Preprocessing
+        ↓
+ResNet-50 Inference
+        ↓
+Decision Engine
+        ↓
+JSON Response Returned
+        ↓
+Frontend Displays Result
+Flask Features Implemented
+Flask REST API
+Flask-CORS for frontend-backend communication
+Environment-based configuration using .env
+Centralized logging system
+File upload handling
+Error handling (404, 413, 500 responses)
+Health monitoring endpoint
 
 ---
 
